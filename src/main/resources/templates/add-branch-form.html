@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+	<head>
+		<meta charset="ISO-8859-1">
+	    <title>Add Branch</title>
+	    <link rel="stylesheet" th:href="@{/style.css}"/>
+	</head>
+	
+	<body>
+	
+		<div class="center-screen">
+		
+			<h1>Add Branch</h1>
+			
+	    	<form action="#" th:action="@{/branches/add}" th:object="${branchDto}" method="POST">
+	        
+		        <div class="first-inner-div label-input">
+		            <label>Name:</label>
+		            <input type="text" th:field="*{branchName}" />
+		        </div>
+		        
+		        <div class="label-input">
+		            <label>Country:</label>
+		            <input type="text" th:field="*{branchCountry}" />
+		        </div>
+		        
+		        <div>
+		            <button class="add-button" type="submit">Add</button>
+		        </div>
+		        
+		    </form>
+		    
+		    <form action="#" th:action="@{/}">
+				<button class="main-menu">Back to Main Menu</button>
+			</form>
+		
+		</div>
+
+	</body>
+	
+</html>

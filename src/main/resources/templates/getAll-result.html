@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+	<head>
+		<meta charset="ISO-8859-1">
+	    <title>Get All Branches Result</title>
+	    <link rel="stylesheet" th:href="@{/style.css}"/>
+	</head>
+	
+	<body>
+	
+		<div class="center-screen">
+		
+		    <h1>Get all Branches Result</h1>
+
+			<table>
+			
+				<thead>
+					<tr>
+						<th>Id</th>
+						<th>Name</th>
+						<th>Country</th>
+						<th>Type</th>
+					</tr>
+				</thead>
+				
+				<tr th:each="branch:${branchesList}">
+					<td th:text="${branch.branchId}"></td>
+					<td th:text="${branch.branchName}"></td>
+					<td th:text="${branch.branchCountry}"></td>
+					<td th:text="${branch.branchType}"></td>
+					<td>
+						<form action="#" th:action="@{/view/update/{id} (id=${branch.branchId})}">
+							<button class="update">Update</button>
+						</form>
+					</td>
+					<td>
+						<form action="#" th:action="@{/branches/delete/{id} (id=${branch.branchId})}">
+							<button class="delete">Delete</button>
+						</form>
+					</td>
+				</tr>	
+			
+			</table>
+			
+			<form action="#" th:action="@{/}">
+				<button class="main-menu">Back to Main Menu</button>
+			</form>
+		    
+	    </div>
+	    
+	</body>
+	
+</html>

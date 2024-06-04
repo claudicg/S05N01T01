@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+	<head>
+		<meta charset="ISO-8859-1">
+	    <title>Main Menu</title>
+	    <link rel="stylesheet" th:href="@{/style.css}"/>
+	</head>
+	
+	<body>
+	
+		<div class="center-screen">
+		
+		    <h1>Main Menu</h1>
+		    
+		    <div>
+		    	<a th:href="@{/view/add}">Add branch</a>
+		    </div>
+		    
+		    <div>
+		    	<a th:href="@{/branches/getAll}">View Branches</a>
+		    </div>
+		    
+		</div>
+		    
+	</body>
+	
+</html>
